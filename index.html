@@ -2636,13 +2636,15 @@ class Component extends DCLogic {
   initAI(props) {
     const base = this.state.learners;
     const classes = [
-      { id: 'c-pp1', grade: 'PP1', teacher: 'Wambui', phone: '0712345601' },
-      { id: 'c-pp2', grade: 'PP2', teacher: 'Rehab', phone: '0712345602' },
-      { id: 'c-g1', grade: 'Grade 1', teacher: 'Diana', phone: '0712345603' },
-      { id: 'c-g2', grade: 'Grade 2', teacher: 'Stella', phone: '0712345604' },
-      { id: 'c-g3', grade: 'Grade 3', teacher: 'Andronica', phone: '0712345605' },
-      { id: 'c-pp1b', grade: 'PP1', teacher: 'Monica', phone: '0712345606' },
-      { id: 'c-pp2b', grade: 'PP2', teacher: 'Finbar', phone: '0712345607' }
+      { id: 'c1', grade: 'PP2', teacher: 'Elizabeth Mualuko', phone: '0712345601' },
+      { id: 'c2', grade: 'PP1', teacher: 'Eunice Nzangi', phone: '0712345602' },
+      { id: 'c3', grade: 'PP2', teacher: 'Eunice Muteti', phone: '0712345603' },
+      { id: 'c4', grade: 'PP2', teacher: 'Doris Mutisya', phone: '0712345604' },
+      { id: 'c5', grade: 'PP2', teacher: 'Mirriam Nyamai', phone: '0712345605' },
+      { id: 'c6', grade: 'PP1', teacher: 'Ruth Peter', phone: '0712345606' },
+      { id: 'c7', grade: 'PP1', teacher: 'Joy Mutunga', phone: '0712345607' },
+      { id: 'c8', grade: 'PP1', teacher: 'Faith Muthama', phone: '0712345608' },
+      { id: 'c9', grade: 'PP2', teacher: 'Damaris Mutunga', phone: '0712345609' }
     ];
     const mk = (cid, list) => list.map((entry, n) => { const b = entry.split(':'); return { id: cid + '-l' + n, name: b[0], gender: b[1] === 'f' ? 'female' : 'male', seed: this.nameHash(b[0]) }; });
     this._chatMainRef = (el) => { this._chatMainEl = el; };
@@ -2661,9 +2663,11 @@ class Component extends DCLogic {
       schoolName: props.schoolName || 'Echos of Joy',
       classes: classes,
       teachers: [],
-      learners: { 'c-pp1': base['pp1-yellow'] || [], 'c-pp2': base['pp2-red'] || [], 'c-g1': base['g1-green'] || [], 'c-g2': base['g2-orange'] || [], 'c-g3': base['g3-purple'] || [],
-        'c-pp1b': mk('c-pp1b', ['Achieng Atieno:f', 'Baraka Mwangi:m', 'Chepkoech Ruto:f', 'Jabari Ochieng:m', 'Makena Gitau:f', 'Nekesa Wafula:f', 'Otieno Juma:m']),
-        'c-pp2b': mk('c-pp2b', ['Amani Kiprop:m', 'Imani Wanjala:f', 'Kamau Njenga:m', 'Neema Mutiso:f', 'Wanjiru Kariuki:f', 'Zuberi Omar:m']) },
+      learners: { 'c1': base['pp2-red'] || [], 'c2': base['pp1-yellow'] || [], 'c3': base['g1-green'] || [], 'c4': base['g2-orange'] || [], 'c5': base['g3-purple'] || [],
+        'c6': mk('c6', ['Achieng Atieno:f', 'Baraka Mwangi:m', 'Chepkoech Ruto:f', 'Jabari Ochieng:m', 'Makena Gitau:f', 'Nekesa Wafula:f', 'Otieno Juma:m']),
+        'c7': mk('c7', ['Amani Kiprop:m', 'Imani Wanjala:f', 'Kamau Njenga:m', 'Neema Mutiso:f', 'Wanjiru Kariuki:f', 'Zuberi Omar:m']),
+        'c8': mk('c8', ['Mutua Kilonzo:m', 'Mwende Musyoka:f', 'Kioko Mbithi:m', 'Ndinda Wambua:f', 'Kalondu Nzioka:f', 'Musau Kyalo:m', 'Syokau Mueni:f', 'Mumo Kiilu:m']),
+        'c9': mk('c9', ['Mwikali Ndolo:f', 'Kyalo Muthoka:m', 'Nthenya Kitheka:f', 'Wanza Mulwa:f', 'Muli Nzomo:m', 'Kanini Mutuku:f', 'Ngei Musembi:m']) },
       activeClassId: null,
       cTeacher: '', cPhone: '', cNameLocked: false, cPhoneLocked: false, cAgree: false,
       lessonSubject: 'Mathematics', lessonIdx: 0,
